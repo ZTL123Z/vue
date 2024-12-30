@@ -1,0 +1,15 @@
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+@ 事件.prevent -> 阻止默认行为
+v-model.trim.number
+
+
+v-bind操作class
+<div class="box" :class="{ping: true, big: false}"> // 字典 class：ping 有，big 无
+<div class="box" :class="[ping]"> // 数组
+
+flex 布局对子元素的影响：
+当父元素 ul 设置为 display: flex; 时，ul 的子元素（li）会被转换为 flex items。
+在 flex 布局中，子元素会自动排成一行（水平排列，默认 flex-direction: row;）。
+这并不意味着 li 变成了内联元素，而是 被 flex 布局重新管理了位置和排列规则，看起来像内联元素。

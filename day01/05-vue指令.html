@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center; 
+            vertical-align: middle; 
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            box-shadow: 2px 2px 2px #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="change">切换</button>
+        <div class="box" v-if="msg"><p>cvxcbvcbdfdf<p></div>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                msg: false,
+                list: [
+                    {id: 1, name: 'a'},
+                    {id: 2, name: 'b'},
+                ]
+            },
+            methods: {
+                change() {
+                    this.msg = !this.msg
+                },
+                del (id) {  
+                    this.list = this.list.filter(item => item.id !== id)
+                },
+                add () {
+                    this.list.unshift({id: new Date().getTime(), name: 'c'})
+                }
+            },
+            computed: {
+                count () {
+                    return this.list.length
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
